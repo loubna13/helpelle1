@@ -3,8 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
+        {% endblock %}
     </head>
+    {% block header %}
+    <nav>
+     <li class="nav-item active">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <em> Bonjour {{ app.user.Nom }}</em>  <a href="{{path('app_login')}}" class="btn-primary">Se déconnecter</a>
+        {% else %}
+        <a href="{{path('app_login')}}" class="btn-primary">Se connecter</a>   
+        <a href="{{path('app_register')}}" class="btn-primary">S'inscrire</a>
+        {% endif %}
+     </li>
+    </nav>
+
+
+    {% endblock %}
+
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
