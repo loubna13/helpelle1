@@ -33,7 +33,7 @@ class Association
     private $Adresse;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=10)
      */
     private $Telephone;
 
@@ -93,12 +93,12 @@ class Association
         return $this;
     }
 
-    public function getTelephone(): ?int
+    public function getTelephone(): ?string
     {
         return $this->Telephone;
     }
 
-    public function setTelephone(int $Telephone): self
+    public function setTelephone(string $Telephone): self
     {
         $this->Telephone = $Telephone;
 
