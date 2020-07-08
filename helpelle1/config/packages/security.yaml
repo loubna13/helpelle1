@@ -1,5 +1,9 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    
+    encoders:
+         App\Entity\User:
+             algorithm: auto
     providers:
         users_in_memory: { memory: null }
     firewalls:
@@ -10,6 +14,7 @@ security:
             anonymous: true
             lazy: true
             provider: users_in_memory
+
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

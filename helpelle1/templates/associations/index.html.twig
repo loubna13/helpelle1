@@ -6,7 +6,7 @@
     <h1>Associations index</h1>
 
     <table class="table">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
@@ -22,6 +22,7 @@
         <tbody>
         {% for association in associations %}
             <tr>
+                 <th scope="row">1</th>
                 <td>{{ association.id }}</td>
                 <td>{{ association.Nom }}</td>
                 <td>{{ association.Type }}</td>
