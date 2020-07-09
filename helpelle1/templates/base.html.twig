@@ -28,9 +28,10 @@
                      <li><a href="{{ path('prevention')}}">Prévention</a></li>
                      <li><a href="{{ path('inscrire_mon_association')}}">Inscrire mon association</a></li>
                      <li><a href="{{ path('mon_compte')}}">Mon compte</a></li>
+                </ul>
 
-
-                     <li class="nav-item active">
+            </nav>
+                  <li class="nav-item active">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <em> Bonjour {{ app.user.Nom }}</em>  <a href="{{ path('app_login')}}" class="btn">Se déconnecter</a>
                         {% else %}
@@ -38,9 +39,6 @@
                         <a href="{{ path('app_register')}}" class="btn">S'inscrire</a>
                         {% endif %}
                     </li>
-                </ul>
-
-            </nav>
 
 
         {% endblock %}

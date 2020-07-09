@@ -233,4 +233,5 @@ footer{
 /*btn connexion/inscription*/
 .btn{
     background-color: #9e4b51;
+    float: right;
 }
