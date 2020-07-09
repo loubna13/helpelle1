@@ -7,6 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Association;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 class AppFixtures extends Fixture
 {
     private $encoder;
@@ -20,6 +21,7 @@ class AppFixtures extends Fixture
     {
         $user = new User();
         $user->setPseudo('admin');
+
         $user->setNom('cottin');
         $user->setPrenom('mathilde');
         $user->setRoles(['ROLE_ADMIN']);
@@ -34,14 +36,12 @@ class AppFixtures extends Fixture
         $association->setMail('admin@test.fr');
         $association->setDescriptif('Anakin... je suis ton pere ...');
        
-    
-    
         $password = $this->encoder->encodePassword($user, 'pass_1234');
         $user->setPassword($password);
 
         $manager->persist($user);
         $manager->persist($association);
-
         $manager->flush();
+
     }
 }

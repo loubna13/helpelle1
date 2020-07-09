@@ -1,12 +1,10 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    
     encoders:
-        # use your user class name here
-        App\Entity\User:
-            # Use native password encoder
-            # This value auto-selects the best possible hashing algorithm
-            # (i.e. Sodium when available).
-            algorithm: auto
+         App\Entity\User:
+             algorithm: auto
+
     providers:
         user_provider:
             entity:
@@ -23,6 +21,7 @@ security:
             guard:
                 authenticators:
                     - App\Security\LoginFormAuthenticator   
+
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
