@@ -4,8 +4,12 @@ security:
     encoders:
          App\Entity\User:
              algorithm: auto
+
     providers:
-        users_in_memory: { memory: null }
+        user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -13,7 +17,10 @@ security:
         main:
             anonymous: true
             lazy: true
-            provider: users_in_memory
+            provider: user_provider
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator   
 
 
             # activate different ways to authenticate
