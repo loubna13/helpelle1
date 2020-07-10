@@ -228,3 +228,10 @@ footer{
     #logo img{width: 100%; margin: 15px auto;}
     header h1 {width: 90%}
 }
+
+/**********************************************************************************************/
+/*btn connexion/inscription*/
+.btn{
+    background-color: #9e4b51;
+    float: right;
+}
