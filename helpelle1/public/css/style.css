@@ -235,3 +235,6 @@ footer{
     background-color: #9e4b51;
     float: right;
 }
+
+#mapid { height: 600px; }
+
