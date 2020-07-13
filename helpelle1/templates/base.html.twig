@@ -7,10 +7,16 @@
         {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
-        
-        <link href="{{ asset('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet')}}">
-        <link href="{{ asset('"https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet')}}">
 
+        <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap')}}">
+        <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Passion+One&display=swap')}}"> 
+        {% endblock %}
+    </head>
+       {% block header %}
+                   <li class="nav-item active">
+
+        
+       
         {# <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
         <style>
@@ -51,20 +57,43 @@
             </nav>
                   <li class="nav-item active">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <em> Bonjour {{ app.user.Nom }}</em>  <a href="{{ path('app_login')}}" class="btn">Se déconnecter</a>
+                        <p class="float-right"><em>Bonjour {{ app.user.Nom }}</em> <a href="{{ path('app_logout')}}" class="btn deconnexion ">Se déconnecter</a></p>
                         {% else %}
-                        <a href="{{ path('app_login')}}" class="btn">Se connecter</a>   
-                        <a href="{{ path('app_register')}}" class="btn">S'inscrire</a>
+                        <a href="{{ path('app_login')}}" class="btn connexion">Se connecter</a>   
+                        <a href="{{ path('app_register')}}" class="btn inscription">S'inscrire</a>
                         {% endif %}
                     </li>
 
 
+                    <!--VISAGE FEMME-->
+                    <img src="{{ asset('images/visagefemme.png')}}" alt="Photo Femme" title="Photo visage femme" id="visage">
+
+                    <!--LOGO-->
+                    <img src="{{ asset('images/logo.png')}}" alt="Logo" title="Logo du site" id="logo">
+                    <!-- TITRE -->
+                    <h1 class="text-center">HELP'ELLE<br>l'annuaire des associations<br> d'aide aux femmes</h1>
+
+                         
+                    <nav>
+                       <ul>
+                             <li><a href="{{ path('accueil')}}">Accueil</a></li>
+                             <li><a href="{{ path('formulaire')}}">Formulaire</a></li>
+                             <li><a href="{{ path('annuaire')}}">Annuaire</a></li>
+                             <li><a href="{{ path('conseils')}}">Conseils</a></li>
+                             <li><a href="{{ path('prevention')}}">Prévention</a></li>
+                             <li><a href="{{ path('inscrire_mon_association')}}">Inscrire mon association</a></li>
+                             <li><a href="{{ path('mon_compte')}}">Mon compte</a></li>
+                        </ul>
+
+                    </nav>
+                         
+
         {% endblock %}
    
-           {% block body %}
-           
-           
-           {% endblock %}
+
+           {% block body %}{% endblock %}
+
+
         {% block footer %}
          <footer>
             <p>&copy;2020 Equipe Help'Elle - Tous droits réservés</p>
@@ -72,6 +101,10 @@
         {% endblock %}
         {% block javascripts %}
         
+
+
+
+
         {% endblock %}
 
     </body>
