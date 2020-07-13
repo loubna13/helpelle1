@@ -17,8 +17,7 @@ section{
 }
 
 
-
-h1{
+ h1{
     font-family: 'Passion One', cursive;
     font-size: 3.4em;
     color: #5A0E13;
@@ -26,7 +25,16 @@ h1{
     padding-top: 20px;
     padding-right: 300px;
 }
+nav li{
 
+     font-weight: bold;
+     font-size: 1em;
+
+}
+.btn{
+    font-weight: bold;
+    font-size: 1em; 
+}
 h1:hover{
     color: #ff7a7a;
 }
@@ -196,13 +204,14 @@ img {
 
 
 #logo{
-    width: 170px;
+    width: 250px;
      margin-top: 30px;
-     padding-right: 300px;
+     padding-right: 100px;
+     margin-left: 400px;
 }
 
 #visage{
-    width: 312px;
+    width: 270px;
     float: left;
     margin:0;
 }
@@ -232,6 +241,17 @@ footer{
 /**********************************************************************************************/
 /*btn connexion/inscription*/
 .btn{
-    background-color: #9e4b51;
+    background-color: #f79595;
+    
+}
+.connexion {
+ 
     float: right;
+    margin-left: 5px;
+    margin-right: 2px;
+    
+}
+.inscription{
+    float: right;
+    
 }
