@@ -32,6 +32,11 @@ class Message
      */
     private $expediteur;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Conversation::class, inversedBy="message")
+     */
+    private $conversation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Message
     public function setExpediteur(bool $expediteur): self
     {
         $this->expediteur = $expediteur;
+
+        return $this;
+    }
+
+    public function getConversation(): ?Conversation
+    {
+        return $this->conversation;
+    }
+
+    public function setConversation(?Conversation $conversation): self
+    {
+        $this->conversation = $conversation;
 
         return $this;
     }

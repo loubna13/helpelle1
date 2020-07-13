@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AssociationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -51,6 +53,16 @@ class Association
      * @ORM\Column(type="text")
      */
     private $Descriptif;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Conversation::class, mappedBy="association")
+     */
+    private $conversations;
+
+    public function __construct()
+    {
+        $this->conversations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -137,6 +149,37 @@ class Association
     public function setDescriptif(string $Descriptif): self
     {
         $this->Descriptif = $Descriptif;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Conversation[]
+     */
+    public function getConversations(): Collection
+    {
+        return $this->conversations;
+    }
+
+    public function addConversation(Conversation $conversation): self
+    {
+        if (!$this->conversations->contains($conversation)) {
+            $this->conversations[] = $conversation;
+            $conversation->setAssociation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeConversation(Conversation $conversation): self
+    {
+        if ($this->conversations->contains($conversation)) {
+            $this->conversations->removeElement($conversation);
+            // set the owning side to null (unless already changed)
+            if ($conversation->getAssociation() === $this) {
+                $conversation->setAssociation(null);
+            }
+        }
 
         return $this;
     }

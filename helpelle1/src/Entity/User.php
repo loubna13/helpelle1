@@ -51,6 +51,11 @@ class User implements UserInterface
      */
     private $Pseudo;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Conversation::class, inversedBy="users")
+     */
+    private $conversation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -161,6 +166,18 @@ class User implements UserInterface
     public function setPseudo(string $Pseudo): self
     {
         $this->Pseudo = $Pseudo;
+
+        return $this;
+    }
+
+    public function getConversation(): ?Conversation
+    {
+        return $this->conversation;
+    }
+
+    public function setConversation(?Conversation $conversation): self
+    {
+        $this->conversation = $conversation;
 
         return $this;
     }
