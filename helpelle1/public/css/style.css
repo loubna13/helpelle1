@@ -253,5 +253,6 @@ footer{
 }
 .inscription{
     float: right;
-    
-}
+
+#mapid { height: 600px; }
+
