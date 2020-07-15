@@ -5,16 +5,18 @@
 {% block body %}
 <!--DÉBUT DU FORMULAIRE DE CONTACT-->
     <section id="section" class="container">
+    <h1 class="benevole"> Devenir bénévole</h1>
         <div class="container3 form-row" id="contact">
             <form action="action_page.php" class="form-group col-md-6">
+                
     
-                <label for="fname">Nom</label>
+                <label for="fname">{{ formulaire.nom }}</label>
                 <input type="text" id="fname" name="firstname" placeholder="Nom" class="form-control">
     
-                <label for="lname">Prénom</label>
+                <label for="lname">{{ formulaire.prenom }}/label>
                 <input type="text" id="lname" name="lastname" placeholder="Prénom" class="form-control">
     
-                <label for="subject">Je souhaite devenir bénénvole</label>
+                <label for="subject">Mes motivations</label>
                 <textarea id="subject" name="subject" placeholder="Votre texte ici..." style="height:200px" class="form-control"></textarea>
                 <br>
                 <input type="submit" href="" class="envoyez btn" value="Envoyez">
