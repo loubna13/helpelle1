@@ -9,80 +9,66 @@
     {# MAP #}
         <div id="mapid"></div>
         <script>
-            var mymap = L.map('mapid').setView([48.833, 2.333], 7);
+            var mymap = L.map('mapid').setView([48.852969, 2.349903], 7);
             L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 40,
+            minZoom: 1,
+            maxZoom: 15,
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoiZmFueWZhbmRldiIsImEiOiJja2NnYTZtdTEwb2piMzNvOGllaThicXU0In0.03L795EO_vp8nDleAXhJig'
         }).addTo(mymap);
-        var marker = L.marker([48.5, -0.09]).addTo(mymap);
-        var circle = L.circle([51.508, -0.11], {
+        var marker = L.marker([46.52, -0.09] ).addTo(mymap);
+        var circle = L.circle([48.852969, -0.11], {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
             radius: 500
         }).addTo(mymap);
-        marker.bindPopup("<b>ADMIN</b><br>Noisy le sec").openPopup();
+
+        var associations = L.marker[{ 48.8709 : 2.3561 } , { 48.7167 : 2.5 }].addTo(mymap);
+        var associations = association.map(obj => { 
+        var rAssociation = {};
+        rAssociation[association.clé] = association.valeur; 
+    return rAssociation;
+});
+
+
+        
+        marker.bindPopup("<b></b><br>").openPopup();
         </script>
-    {# \MAP #}
     
-    {# <div id="map"></div>
-    <script>
-        var map = L.map('map').setView([0, 0], 1);
-
-        L.tileLayer('https://api.maptiler.com/maps/basic-2154/{z}/{x}/{y}.png?key=qKvvmyznqjNInpJShXXJ',{
-            attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
-        }).addTo(map);
-        // var marker = L.marker([51.5, -0.09]).addTo(map);
     </script> #}
-
-    <table class="table">
-        <thead class="thead-light">
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Type</th>
-                <th>Adresse</th> 
-                <th>Telephone</th>
-                <th>Region</th>
-                <th>Mail</th>
-                <th>Descriptif</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+      <table class="table">
         {% for association in associations %}
-            <tr>
-                <td>{{ association.id }}</td>
-                <td>{{ association.Nom }}</td>
-                <td>{{ association.Type }}</td>
-                <td>{{ association.Adresse }}</td>
-                <td>{{ association.Telephone }}</td>
-                <td>{{ association.Region }}</td>
-                <td>{{ association.Mail }}</td>
-                <td>{{ association.Descriptif }}</td>
-                <td>
-                    <a href="{{ path('association_show', {'id': association.id}) }}">show</a>
-                    <a href="{{ path('association_edit', {'id': association.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
+        <div class="card" style="width: 1100px; margin: 20px; ">
+
+              <div class="card-body">
+                <h5 class="card-title">{{ association.Nom }}</h5>
+                <p class="card-text">{{ association.Descriptif }}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ association.Type }}</li>
+                <li class="list-group-item">{{ association.Adresse }}</li>
+                <li class="list-group-item">{{ association.Telephone }}</li>
+                <li class="list-group-item">{{ association.Region }}</li>
+                <li class="list-group-item">{{ association.Mail }}</li>
+              </ul>
+              <img src="https://www.codeur.com/blog/wp-content/uploads/2018/06/google-maps-payant.jpg" class="card-img-top" alt="..." style="width: 200px;">
+              <div class="card-body">
+                <a href="{{ path('association_show', {'id': association.id}) }}">show</a>
+                <a href="{{ path('association_edit', {'id': association.id}) }}">edit</a>
+              </div>
+        </div>
+
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('association_new') }}">Create new</a>
+        <button class="bouton">
+        <a href="{{ path('association_new') }}">Create new</a></button>
 
    
 {% endblock %}
   
-
- 
-
-

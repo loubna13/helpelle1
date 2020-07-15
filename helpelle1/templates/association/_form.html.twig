@@ -1,4 +1,78 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+
+{% block body %}
+	{{ form_start(form)}}
+	<div class="container">
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label >Nom</label>
+	              {{ form_widget(form.Nom ,{ 'attr' :{'placeholder':'Nom','class':'nomDeMaClasse', 'class':'form-control'}})}}
+	            </div>
+	        </div>
+
+	        <div class="form-row">
+	           <div class="form-group col-md-6">
+	            <label for="">Type</label>
+	             
+	             {{ form_widget(form.Type ,{ 'attr' :{'placeholder':'Type','class':'nomDeMaClasse', 'class':'form-control'}}) }}
+	            </div>       
+	        </div>
+
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label >Adresse</label>
+	                {{ form_widget(form.Adresse ,{ 'attr' :{'placeholder':'Adresse','class':'nomDeMaClasse', 'class':'form-control'}}) }}
+	            </div>
+	        </div>
+	        <div class="form-row">
+	             <div class="form-group col-md-6">
+	                 <label >Telephone</label>
+
+	             {{ form_widget(form.Telephone ,{ 'attr' :{'placeholder':'Telephone','class':'nomDeMaClasse', 'class':'form-control'}}) }}
+	             </div>
+	        </div>
+	         
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	               <label >Mail</label>
+	                {{ form_widget(form.Mail, {'attr':{'placeholder':'Mail', 'class':'form-control'}
+	                }) }}
+	            </div>          
+	        </div>
+
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	               <label >Region</label>
+	               <select id="country" name="country" class="form-control">
+	                    <option value="france">Auvergne-Rhône-Alpes</option>
+	                    <option value="belgique">Bourgogne-Franche-Comté</option>
+	                    <option value="suisse">Bretagne</option>
+	                    <option value="allemagne">Centre-Val de Loire</option>
+	                    <option value="italie">Corse</option>
+	                    <option value="etats-unis">Grand Est</option>
+	                    <option value="autre">Île-de-France</option>
+	                    <option value="autre">Normandie</option>
+	                    <option value="autre">Nouvelle-Aquitaine</option>
+	                    <option value="autre">Occitanie</option>
+	                    <option value="autre">Outre-Mer</option>
+	                    <option value="autre">Pays de la Loire</option>
+	                    <option value="autre">Provence-Alpes-Côte d'Azur</option>
+	                    <option value="autre">Outre-Mer</option>
+	                </select>
+	                {{ form_widget(form.Region, {'attr':{'placeholder':'Region', 'class':'form-control'}
+	                }) }}
+	           </div>          
+	        </div>
+
+	          <div class="form-row">
+	            <div class="form-group col-md-6">
+	               <label >Descriptif</label>
+	                {{ form_widget(form.Descriptif, {'attr':{'placeholder':'Ajoutez votre texte ici ...', 'class':'form-control'}
+	                }) }}
+	            </div>          
+	        </div>
+	        <br>
+	    <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+
+	</div>    
+	{{ form_end(form) }}
+{% endblock %}

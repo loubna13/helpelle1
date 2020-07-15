@@ -1,6 +1,119 @@
 easy_admin:
-    entities:
-      - App\Entity\User
+  design:
+    menu:
+      - {label: "Entities"}
+      - label: "Association"
+        children:
+            - {entity: Association, label: "Liste des associations", icon: "th-list"}
+            - {entity: Association, label: "Ajouter une asssociation", icon: "plus", params: {action: 'new'}, permission: 'ROLE_ADMIN'}
+
+      - label: "Conversation"
+        children:
+            - {entity: Conversation, label: "Liste de conversations", icon: "th-list"}
+            - {entity: Conversation, label: "Ajouter une conversation", icon: "plus", params: {action: 'new'}}
+
+      - label: "Message"
+        children:
+            - {entity: Message, label: "Liste de messages", icon: "th-list"}
+            - {entity: Message, label: "Ajouter un message", icon: "plus", params: {action: 'new'}}
+
+
+
+      - {label: "settings"}
+      - {entity: User, icon: "user", permission: 'ROLE_ADMIN'}
+      - {entity: User, label: "Liste des utilisateurs", icon: "th-list"}
+      - {entity: User, label: "Ajouter un utilisateur", icon: "plus", params: {action: 'new'}}
+
+  site_name: 'Helpelle Administration'
+  user:
+    display_name: true
+    display_avatar: true
+    name_property_path: 'Pseudo'
+    
+  
+
+  entities:
+    User:
+      class: App\Entity\User
+      label: "User"
+      form:
+        fields:
+          - {type: 'group', icon: 'pencil', label: 'Basic Information', css_class: 'col-lg-6'}
+          - Email
+          - Nom
+          - Prenom
+          - Pseudo
+      list:
+        batch_actions: ['delete']
+        title: "Liste des utilisateurs" 
+        item_permission: 'ROLE_ADMIN' 
+      show:
+        item_permission: 'ROLE_ADMIN'
+      new:
+        title: Ajouter un utilisateur
+        item_permission: 'ROLE_ADMIN'
+
+    Association:
+      class: App\Entity\Association
+      label: "Association"
+      form:
+        fields:
+          - {type: 'group', icon: 'pencil', label: 'Basic Information', css_class: 'col-lg-7'}
+          - Nom
+          - type
+          - Adresse 
+          - {property: 'descriptif', type: 'text_editor'}
+          - {type: 'group', icon: 'th-list', label: 'Autres Information', css_class: 'col-lg-5'}
+          - Telephone
+          - Region
+          - Mail
+      list:
+        batch_actions: ['delete']
+        title: " Associations inscrites" 
+      show:
+        item_permission: 'ROLE_ADMIN'
+      new:
+        item_permission: 'ROLE_ADMIN'
+
+    Conversation:
+      class: App\Entity\Conversation
+      label: "Conversation"
+      form:
+        fields:
+          - {type: 'group', icon: 'pencil', label: 'Basic Information', css_class: 'col-lg-7'}
+          - date
+          - {property: 'contenu', type: 'text_editor'}
+          - expediteur
+          - conversation
+      list:
+        batch_actions: ['delete']
+        title: " Messages reçus" 
+      show:
+        item_permission: 'ROLE_ADMIN'
+        title: Ajouter une conversation
+      new:
+        item_permission: 'ROLE_ADMIN'
+
+
+
+    Message:
+      class: App\Entity\Message
+      label: "Message"
+      form:
+        fields:
+          - {type: 'group', icon: 'pencil', label: 'Basic Information', css_class: 'col-lg-7'}
+          - date
+          - {property: 'contenu', type: 'text_editor'}
+          - expediteur
+          - conversation
+      list:
+        batch_actions: ['delete']
+        title: " Messages reçus" 
+      show:
+        item_permission: 'ROLE_ADMIN'
+        title: Ajouter un message
+      new:
+        item_permission: 'ROLE_ADMIN'
 
 #        # List the entity class name you want to manage
 #        - App\Entity\Product

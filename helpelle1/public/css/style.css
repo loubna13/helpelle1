@@ -1,6 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
-    background: #ffe6e6;
+    background: #fefee2;
     margin: 0;
 }
 
@@ -17,8 +17,7 @@ section{
 }
 
 
-
-h1{
+ h1{
     font-family: 'Passion One', cursive;
     font-size: 3.4em;
     color: #5A0E13;
@@ -26,7 +25,16 @@ h1{
     padding-top: 20px;
     padding-right: 300px;
 }
+nav li{
 
+     font-weight: bold;
+     font-size: 1em;
+
+}
+.btn{
+    font-weight: bold;
+    font-size: 1em; 
+}
 h1:hover{
     color: #ff7a7a;
 }
@@ -70,7 +78,7 @@ span {
 
 a{
     text-decoration: none;
-    color: #5A0E13;
+    color: white;
 }
 
 a:hover{
@@ -196,13 +204,14 @@ img {
 
 
 #logo{
-    width: 170px;
+    width: 270px;
      margin-top: 30px;
-     padding-right: 300px;
+     padding-right: 150px;
+     margin-left: 450px;
 }
 
 #visage{
-    width: 312px;
+    width: 240px;
     float: left;
     margin:0;
 }
@@ -232,9 +241,18 @@ footer{
 /**********************************************************************************************/
 /*btn connexion/inscription*/
 .btn{
-    background-color: #9e4b51;
-    float: right;
+    background-color: #f79595;
+    
 }
+.connexion {
+ 
+    float: right;
+    margin-left: 5px;
+    margin-right: 2px;
+    
+}
+.inscription{
+    float: right;
 
+}
 #mapid { height: 600px; }
-

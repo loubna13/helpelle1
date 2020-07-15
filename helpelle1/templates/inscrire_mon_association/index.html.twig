@@ -3,5 +3,51 @@
 {% block title %}Inscrire mon association{% endblock %}
 
 {% block body %}
+<!--DÉBUT DU FORMULAIRE DE CONTACT-->
+    <section id="section" class="container">
+        <div class="container3 form-row" id="contact">
+            <form action="action_page.php" class="form-group col-md-6">
+    
+                <label for="fname">Nom de l'Association</label>
+                <input type="text" id="fname" name="firstname" placeholder="Nom de l'association" class="form-control">
+    
+                <label for="lname">Président de l'Association</label>
+                <input type="text" id="lname" name="lastname" placeholder="Nom du Président" class="form-control">
+
+            <div>
+
+            	<label for="country" class="text-center">Régions</label>
+                <select id="country" name="country" class="form-control">
+                    <option value="france">Auvergne-Rhône-Alpes</option>
+                    <option value="belgique">Bourgogne-Franche-Comté</option>
+                    <option value="suisse">Bretagne</option>
+                    <option value="allemagne">Centre-Val de Loire</option>
+                    <option value="italie">Corse</option>
+                    <option value="etats-unis">Grand Est</option>
+                    <option value="autre">Île-de-France</option>
+                    <option value="autre">Normandie</option>
+                    <option value="autre">Nouvelle-Aquitaine</option>
+                    <option value="autre">Occitanie</option>
+                    <option value="autre">Outre-Mer</option>
+                    <option value="autre">Pays de la Loire</option>
+                    <option value="autre">Provence-Alpes-Côte d'Azur</option>
+                    <option value="autre">Outre-Mer</option>
+                </select>
+            </div>
+                
+    
+                <label for="subject">Inscrire mon Association</label>
+                <textarea id="subject" name="subject" placeholder="Votre texte ici..." style="height:200px" class="form-control"></textarea>
+                <br>
+             
+                <input type="submit" href="" class="envoyez btn" value="Envoyez">
+    
+            </form>
+        </div>
+    </section>
+    <!--FIN DU FORMULAIRE DE CONTACT-->
+
 
 {% endblock %}
+
+

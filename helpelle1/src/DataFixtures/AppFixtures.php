@@ -22,10 +22,26 @@ class AppFixtures extends Fixture
         $user = new User();
         $user->setPseudo('admin');
 
-        $user->setNom('cottin');
-        $user->setPrenom('mathilde');
+        $user->setNom('barkat');
+        $user->setPrenom('loubna');
         $user->setRoles(['ROLE_ADMIN']);
-        $user->setEmail('admin@test.fr');
+        $user->setEmail('loubnabarkat@outlook.fr');
+
+        $password = $this->encoder->encodePassword($user, 'pass_1234');
+        $user->setPassword($password);
+
+        $user2 = new User();
+        $user2->setPseudo('user');
+
+        $user2->setNom('cottin');
+        $user2->setPrenom('mathilde');
+        $user2->setRoles(['ROLE_user']);
+        $user2->setEmail('test@test.fr');
+
+         $password = $this->encoder->encodePassword($user2, 'pass_1234');
+        $user2->setPassword($password);
+
+
 
         $association = new Association();
         $association->setNom('admin');
@@ -36,10 +52,10 @@ class AppFixtures extends Fixture
         $association->setMail('admin@test.fr');
         $association->setDescriptif('Anakin... je suis ton pere ...');
        
-        $password = $this->encoder->encodePassword($user, 'pass_1234');
-        $user->setPassword($password);
+       
 
         $manager->persist($user);
+        $manager->persist($user2);
         $manager->persist($association);
         $manager->flush();
 
