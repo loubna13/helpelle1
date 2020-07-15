@@ -120,9 +120,9 @@ img {
 }
 header{
     background-image: url("../images/stop1.jpg");
-    background-size: 1600px;
-    background-repeat: no-repeat;
-    width: 1600px;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    /* width: 1600px; */
     height: 500px;
 }
 
@@ -221,9 +221,9 @@ header{
     width: 370px;
     float: left;
     margin:0;
-    height:370px;*/
+    height:370px;
 
-}
+}*/
 #photo{
     display: flex;
     flex-wrap: wrap;

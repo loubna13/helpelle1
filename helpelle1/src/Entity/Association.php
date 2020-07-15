@@ -35,7 +35,7 @@ class Association
     private $Adresse;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=40)
      */
     private $Telephone;
 
