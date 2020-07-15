@@ -3,18 +3,9 @@
 {% block title %}Inscrire mon association{% endblock %}
 
 {% block body %}
-<!--DÉBUT DU FORMULAIRE DE CONTACT-->
-    <section id="section" class="container">
-        <div class="container3 form-row" id="contact">
-            <form action="action_page.php" class="form-group col-md-6">
-    
-                <label for="fname">Nom de l'Association</label>
-                <input type="text" id="fname" name="firstname" placeholder="Nom de l'association" class="form-control">
-    
-                <label for="lname">Président de l'Association</label>
-                <input type="text" id="lname" name="lastname" placeholder="Nom du Président" class="form-control">
+<a href="{{ path('association/new.html.twig') }}">Inscrire mon association</a>
 
-            <div>
+    <!--        <div>
 
             	<label for="country" class="text-center">Régions</label>
                 <select id="country" name="country" class="form-control">
@@ -33,19 +24,6 @@
                     <option value="autre">Provence-Alpes-Côte d'Azur</option>
                     <option value="autre">Outre-Mer</option>
                 </select>
-            </div>
-                
-    
-                <label for="subject">Inscrire mon Association</label>
-                <textarea id="subject" name="subject" placeholder="Votre texte ici..." style="height:200px" class="form-control"></textarea>
-                <br>
-             
-                <input type="submit" href="" class="envoyez btn" value="Envoyez">
-    
-            </form>
-        </div>
-    </section>
-    <!--FIN DU FORMULAIRE DE CONTACT-->
-
+            </div>-->
 
 {% endblock %}

@@ -38,46 +38,34 @@
         }).addTo(map);
         // var marker = L.marker([51.5, -0.09]).addTo(map);
     </script> #}
-
-    <table class="table">
-        <thead class="thead-light">
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Type</th>
-                <th>Adresse</th> 
-                <th>Telephone</th>
-                <th>Region</th>
-                <th>Mail</th>
-                <th>Descriptif</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+      <table class="table">
         {% for association in associations %}
-            <tr>
-                <td>{{ association.id }}</td>
-                <td>{{ association.Nom }}</td>
-                <td>{{ association.Type }}</td>
-                <td>{{ association.Adresse }}</td>
-                <td>{{ association.Telephone }}</td>
-                <td>{{ association.Region }}</td>
-                <td>{{ association.Mail }}</td>
-                <td>{{ association.Descriptif }}</td>
-                <td>
-                    <a href="{{ path('association_show', {'id': association.id}) }}">show</a>
-                    <a href="{{ path('association_edit', {'id': association.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
+        <div class="card" style="width: 1100px; margin: 20px; ">
+
+              <div class="card-body">
+                <h5 class="card-title">{{ association.Nom }}</h5>
+                <p class="card-text">{{ association.Descriptif | raw }}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ association.Type }}</li>
+                <li class="list-group-item">{{ association.Adresse }}</li>
+                <li class="list-group-item">{{ association.Telephone }}</li>
+                <li class="list-group-item">{{ association.Region }}</li>
+                <li class="list-group-item">{{ association.Mail }}</li>
+              </ul>
+              <img src="https://www.codeur.com/blog/wp-content/uploads/2018/06/google-maps-payant.jpg" class="card-img-top" alt="..." style="width: 200px;">
+              <div class="card-body">
+                <a href="{{ path('association_show', {'id': association.id}) }}">show</a>
+                <a href="{{ path('association_edit', {'id': association.id}) }}">edit</a>
+              </div>
+        </div>
+
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('association_new') }}">Create new</a>
+        <button class="bouton">
+        <a href="{{ path('association_new') }}">Creer une association</a></button>
 
    
 {% endblock %}

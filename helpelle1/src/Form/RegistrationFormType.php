@@ -35,7 +35,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Ce champs est obligatoire',
                     ]),
                     new Length([
                         'min' => 6,
