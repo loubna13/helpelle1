@@ -24,6 +24,7 @@ section{
     margin-top: 0px;
     padding-top: 20px;
     padding-right: 300px;
+
 }
 nav li{
 
@@ -250,7 +251,7 @@ footer{
 /**********************************************************************************************/
 /*btn connexion/inscription*/
 .btn{
-    background-color: #ff7a7a;
+    background-color: #FFCDD2;
     
 }
 .connexion {
@@ -275,4 +276,7 @@ footer{
   color: #ff7a7a;
  }
   
-
+.benevole{
+    float: left;
+    padding-top: 0px;
+}

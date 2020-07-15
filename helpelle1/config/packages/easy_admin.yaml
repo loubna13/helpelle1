@@ -75,6 +75,7 @@ easy_admin:
       new:
         title: " Ajouter une association"
         item_permission: 'ROLE_ADMIN'
+      delete: 'ROLE_ADMIN'
 
     Conversation:
       class: App\Entity\Conversation
@@ -115,6 +116,7 @@ easy_admin:
         title: Ajouter un message
       new:
         item_permission: 'ROLE_ADMIN'
+      
 
 #        # List the entity class name you want to manage
 #        - App\Entity\Product
