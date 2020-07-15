@@ -4,28 +4,9 @@
 
 {% block body %}
     <h1>Association index</h1>
-
-
-  
-   
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Type</th>
-                <th>Adresse</th>
-                <th>Telephone</th>
-                <th>Region</th>
-                <th>Mail</th>
-                <th>Descriptif</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <table class="table_id">
         {% for association in associations %}
-        <div class="card" style="width: 1100px; margin: 120px;">
-  
+<div class="card" style="width: 1100px; margin: 20px; ">
   <div class="card-body">
     <h5 class="card-title">{{ association.Nom }}</h5>
     <p class="card-text">{{ association.Descriptif }}</p>
@@ -40,31 +21,35 @@
   <img src="https://www.codeur.com/blog/wp-content/uploads/2018/06/google-maps-payant.jpg" class="card-img-top" alt="..." style="width: 200px;">
   <div class="card-body">
     <a href="{{ path('association_show', {'id': association.id}) }}">show</a>
-                    <a href="{{ path('association_edit', {'id': association.id}) }}">edit</a>
+    <a href="{{ path('association_edit', {'id': association.id}) }}">edit</a>
   </div>
 </div>
-        
-            <tr>
-                <td>{{ association.id }}</td>
-                <td>{{ association.Nom }}</td>
-                <td>{{ association.Type }}</td>
-                <td>{{ association.Adresse }}</td>
-                <td>{{ association.Telephone }}</td>
-                <td>{{ association.Region }}</td>
-                <td>{{ association.Mail }}</td>
-                <td>{{ association.Descriptif }}</td>
-                <td>
-                    <a href="{{ path('association_show', {'id': association.id}) }}">show</a>
-                    <a href="{{ path('association_edit', {'id': association.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
+
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('association_new') }}">Create new</a>
+    <table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="bouton">
+<a href="{{ path('association_new') }}">Create new</a></p>
+
+</div>
 {% endblock %}
