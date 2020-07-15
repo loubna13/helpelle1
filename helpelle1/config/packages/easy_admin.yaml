@@ -116,7 +116,6 @@ easy_admin:
         title: Ajouter un message
       new:
         item_permission: 'ROLE_ADMIN'
-      
 
 #        # List the entity class name you want to manage
 #        - App\Entity\Product
