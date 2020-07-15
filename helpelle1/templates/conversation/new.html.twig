@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Conversation{% endblock %}
+{% block title %}Nouvelle Conversation{% endblock %}
 
 {% block body %}
-    <h1>Create new Conversation</h1>
+    <h1>Creer une conversation</h1>
 
     {{ include('conversation/_form.html.twig') }}
 
-    <a href="{{ path('conversation_index') }}">back to list</a>
+    <a href="{{ path('conversation_index') }}">Revenir à la liste</a>
 {% endblock %}

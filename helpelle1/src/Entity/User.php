@@ -170,10 +170,6 @@ class User implements UserInterface
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->Pseudo;
-
     public function getConversation(): ?Conversation
     {
         return $this->conversation;
@@ -185,5 +181,9 @@ class User implements UserInterface
 
         return $this;
 
+    }
+    public function __toString()
+    {
+        return $this->Pseudo;
     }
 }

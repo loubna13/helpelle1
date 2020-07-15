@@ -7,23 +7,10 @@
         {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
-
+        <link rel="stylesheet" type="text/Js" href="{{ asset('Js/réseaux.js')}}">
         <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap')}}">
         <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css2?family=Passion+One&display=swap')}}"> 
-        {% endblock %}
-    </head>
-       {% block header %}
-                   <li class="nav-item active">
-
-        
-       
-        {# <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-        <style>
-            #map {position:absolute; top: 0; bottom: 0; left: 0; rigth:0;}
-        </style> #}
-
-         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin=""/>
          <!-- Make sure you put this AFTER Leaflet's CSS -->
@@ -32,79 +19,51 @@
         crossorigin=""></script>
         {% endblock %}
     </head>
+    <header>
+        {% block header %}
 
-    {% block header %}
-
-             <!--LOGO-->
-            <img src="{{ asset('images/logo.png')}}" alt="Logo" title="Logo du site" id="logo">
-            <!-- TITRE -->
-            <h1>HELP'ELLE<br>l'annuaire des associations<br> d'aide aux femmes</h1>
-
-            <!--VISAGE FEMME-->
-            <img src="{{ asset('images/visagefemme.png')}}" alt="Photo Femme" title="Photo visage femme" id="visage">
-
-            <nav>
-               <ul>
-                     <li><a href="{{ path('accueil')}}">Accueil</a></li>
-                     <li><a href="{{ path('formulaire')}}">Formulaire</a></li>
-                     <li><a href="{{ path('annuaire')}}">Annuaire</a></li>
-                     <li><a href="{{ path('conseils')}}">Conseils</a></li>
-                     <li><a href="{{ path('prevention')}}">Prévention</a></li>
-                     <li><a href="{{ path('inscrire_mon_association')}}">Inscrire mon association</a></li>
-                     <li><a href="{{ path('mon_compte')}}">Mon compte</a></li>
-                </ul>
-
-            </nav>
-                  <li class="nav-item active">
+                   <li class="nav-item active">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <p class="float-right"><em>Bonjour {{ app.user.Nom }}</em> <a href="{{ path('app_logout')}}" class="btn deconnexion ">Se déconnecter</a></p>
+                        <p class="float-right"><em> Bonjour {{ app.user.Nom }}</em> <a href="{{ path('app_logout')}}" class="deconnexion">Deconnexion</a></p>
                         {% else %}
-                        <a href="{{ path('app_login')}}" class="btn connexion">Se connecter</a>   
-                        <a href="{{ path('app_register')}}" class="btn inscription">S'inscrire</a>
+                        <a href="{{ path('app_login')}}" class="connexion">Connexion</a>   
+                        <a href="{{ path('app_register')}}" class="inscription">Inscription</a>
                         {% endif %}
                     </li>
-
-
-                    <!--VISAGE FEMME-->
-                    <img src="{{ asset('images/visagefemme.png')}}" alt="Photo Femme" title="Photo visage femme" id="visage">
-
-                    <!--LOGO-->
-                    <img src="{{ asset('images/logo.png')}}" alt="Logo" title="Logo du site" id="logo">
+                    
+                     <!--LOGO-->
+                    <img src="{{ asset('images/logo.png')}}"  width="100" alt="Logo" title="Logo du site" id="logo">
                     <!-- TITRE -->
-                    <h1 class="text-center">HELP'ELLE<br>l'annuaire des associations<br> d'aide aux femmes</h1>
-
-                         
-                    <nav>
-                       <ul>
-                             <li><a href="{{ path('accueil')}}">Accueil</a></li>
-                             <li><a href="{{ path('formulaire')}}">Formulaire</a></li>
-                             <li><a href="{{ path('annuaire')}}">Annuaire</a></li>
-                             <li><a href="{{ path('conseils')}}">Conseils</a></li>
-                             <li><a href="{{ path('prevention')}}">Prévention</a></li>
-                             <li><a href="{{ path('inscrire_mon_association')}}">Inscrire mon association</a></li>
-                             <li><a href="{{ path('mon_compte')}}">Mon compte</a></li>
-                        </ul>
-
-                    </nav>
-                         
+                    <h1 class="title">HELP'ELLE<br>l'annuaire des associations<br> d'aide aux femmes</h1>                       
 
         {% endblock %}
-   
+    </header>
+                <nav>
+                    <ul>
+                     <li><a href="{{ path('accueil')}}">Accueil</a></li>
+                     <li><a href="{{ path('formulaire')}}">Formulaire</a></li>
+                     <li><a href="{{ path('association_index')}}">Annuaire</a></li>
+                     <li><a href="{{ path('conseils')}}">Conseils</a></li>
+                     <li><a href="{{ path('prevention')}}">Prévention</a></li>
+                     <li><a href="{{ path('association_new')}}">Inscrire mon association</a></li>
+                     <li><a href="{{ path('apropos')}}">A propos</a></li>
+                  </ul>
+
+                </nav> 
 
            {% block body %}{% endblock %}
 
 
         {% block footer %}
-         <footer>
-            <p>&copy;2020 Equipe Help'Elle - Tous droits réservés</p>
+         <footer>       
+            <p>&copy;2020 Equipe Help'Elle - Tous droits réservés <a href="{{ path('mentionslegales')}}">⎜mentions légales</a><a href="{{ path('formulaire')}}"> ⎜contact ⎜</p>
         </footer>
+
         {% endblock %}
+
         {% block javascripts %}
         
-
-
-
-
+        
         {% endblock %}
 
     </body>

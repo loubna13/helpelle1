@@ -50,6 +50,7 @@ easy_admin:
       show:
         item_permission: 'ROLE_ADMIN'
       new:
+        title: Ajouter un utilisateur
         item_permission: 'ROLE_ADMIN'
 
     Association:
@@ -72,13 +73,48 @@ easy_admin:
       show:
         item_permission: 'ROLE_ADMIN'
       new:
+        title: " Ajouter une association"
         item_permission: 'ROLE_ADMIN'
 
     Conversation:
       class: App\Entity\Conversation
+      label: "Conversation"
+      form:
+        fields:
+          - {type: 'group', icon: 'pencil', label: 'Basic Information', css_class: 'col-lg-7'}
+          - date
+          - {property: 'contenu', type: 'text_editor'}
+          - expediteur
+          - conversation
+      list:
+        batch_actions: ['delete']
+        title: " Messages reçus" 
+      show:
+        item_permission: 'ROLE_ADMIN'
+        title: Ajouter une conversation
+      new:
+        item_permission: 'ROLE_ADMIN'
+
+
+
     Message:
       class: App\Entity\Message
-    
+      label: "Message"
+      form:
+        fields:
+          - {type: 'group', icon: 'pencil', label: 'Basic Information', css_class: 'col-lg-7'}
+          - date
+          - {property: 'contenu', type: 'text_editor'}
+          - expediteur
+          - conversation
+      list:
+        batch_actions: ['delete']
+        title: " Messages reçus" 
+      show:
+        item_permission: 'ROLE_ADMIN'
+        title: Ajouter un message
+      new:
+        item_permission: 'ROLE_ADMIN'
 
 #        # List the entity class name you want to manage
 #        - App\Entity\Product

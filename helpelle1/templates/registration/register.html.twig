@@ -28,7 +28,7 @@
         <div class="form-row">
         
             <div class="form-group col-md-6">
-                <label >Prenom</label>
+                <label >Prénom</label>
                 {{ form_widget(registrationForm.Prenom ,{ 'attr' :{'placeholder':'Prenom','class':'nomDeMaClasse', 'class':'form-control'}}) }}
             </div>
 
@@ -54,9 +54,10 @@
                 Check me out
               </label>
         </div>
-            
-                <button type="submit" class="btn" > <a href="{{ path('app_login')}}"></a>S'inscrire</button>
+          <br> 
+                <button type="submit" class="btn" >S'inscrire</button>
     </div>  
     {{ form_end(registrationForm) }}
+    <br>
     
 {% endblock %}
