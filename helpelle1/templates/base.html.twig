@@ -35,14 +35,14 @@
                      <!--LOGO-->
                     <img src="{{ asset('images/logo.png')}}"  width="100" alt="Logo" title="Logo du site" id="logo">
                     <!-- TITRE -->
-                    <h1 class="title">HELP'ELLE<br>l'annuaire des associations<br> d'aide aux femmes</h1>                       
+                    <h1 class="title">HELP'ELLE<br>L'annuaire des associations<br> d'aide aux femmes</h1>                       
 
         {% endblock %}
     </header>
                 <nav>
                     <ul>
                      <li><a href="{{ path('accueil')}}">Accueil</a></li>
-                     <li><a href="{{ path('formulaire')}}">Formulaire</a></li>
+                     <li><a href="{{ path('formulaire_new')}}">Formulaire</a></li>
                      <li><a href="{{ path('association_index')}}">Annuaire</a></li>
                      <li><a href="{{ path('conseils')}}">Conseils</a></li>
                      <li><a href="{{ path('prevention')}}">Prévention</a></li>
@@ -51,13 +51,14 @@
                   </ul>
 
                 </nav> 
+                
 
            {% block body %}{% endblock %}
 
 
         {% block footer %}
          <footer>       
-            <p>&copy;2020 Equipe Help'Elle - Tous droits réservés <a href="{{ path('mentionslegales')}}">⎜mentions légales</a><a href="{{ path('formulaire')}}"> ⎜contact ⎜</p>
+            <p>&copy;2020 Equipe Help'Elle - Tous droits réservés <a href="{{ path('mentionslegales')}}">⎜mentions légales</a><a href="{{ path('formulaire_index')}}"> ⎜contact ⎜</p>
         </footer>
 
         {% endblock %}

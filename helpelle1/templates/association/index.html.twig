@@ -19,13 +19,17 @@
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoiZmFueWZhbmRldiIsImEiOiJja2NnYTZtdTEwb2piMzNvOGllaThicXU0In0.03L795EO_vp8nDleAXhJig'
         }).addTo(mymap);
-        var marker = L.marker([46.52, -0.09] ).addTo(mymap);
-        var circle = L.circle([48.852969, -0.11], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 500
-        }).addTo(mymap);
+         var marker = L.marker([46.52, -0.09] ).addTo(mymap);
+         var marker = L.marker([46.52, 2 ] ).addTo(mymap);
+         var marker = L.marker([48.8534,  2.3488] ).addTo(mymap);
+         var marker = L.marker([48.8534,  1] ).addTo(mymap);
+         var marker = L.marker([48.8534,  4] ).addTo(mymap);
+         var marker = L.marker([48.8534,  7] ).addTo(mymap);
+         var marker = L.marker([48.8534,  3.5] ).addTo(mymap);
+         var marker = L.marker([47.45,  2.3] ).addTo(mymap);
+         var marker = L.marker([48.8534,  0.7] ).addTo(mymap);
+         
+       
 
         var associations = L.marker[{ 48.8709 : 2.3561 } , { 48.7167 : 2.5 }].addTo(mymap);
         var associations = association.map(obj => { 
@@ -71,4 +75,3 @@
 
    
 {% endblock %}
-  
