@@ -3,47 +3,87 @@
 {% block title %}Apropos{% endblock %}
 
 {% block body %}
-<div class="contenaire">
-        <section>
-            <h2>QUI SOMMES-NOUS ?</h2>
-        </section>
+    <div class="contenaire">
+          
+    <section> 
 
-        <!-- BLOC TEXTE n°1-->
-        <div class="bloctexte">
-            <div class="texte">
-                <span><strong>De quoi s'agit-il ?</strong></span>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sapiente similique ex debitis molestias ullam? Voluptate, ducimus. Impedit mollitia animi, unde nihil nisi minima cumque, dolore dolorum sint, ad id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sapiente similique ex debitis molestias ullam? Voluptate,ducimus. Impedit mollitia animi, unde nihil nisi minima cumque, dolore dolorum sint, ad id.</P>
+            <h2>QUI SOMMES-NOUS ?</h2> 
+            <!-- BLOC TEXTE n°1-->  
+            <div class="bloctexte col-md-6">
+                <div class="texte">
+                    <span><strong>Une équipe dynamique</strong></span>
+                    <P class="description">Ensemble, nous avons créé Help’Elle qui est une jeune association qui s’engage dans des actions d’aide pour toutes les
+                    femmes de France. Celles qui sont en difficulté, mais également celles qui cherchent juste à s’informer. HelpElle.fr,
+                    site Internet de conseils et de prévention permet de mettre en lien nos utilisateurs avec des associations d’aides grâce
+                    à notre annuaire en ligne de plus de 10 organismes d’aides aux victimes, classé par région et par thématique.</P>
+                </div> 
+            </div>
+            
+            <!-- BLOC TEXTE n°2-->
+            <div class="bloctexte col-md-6">
+                <div class="texte">
+                    <span><strong>Nos Valeurs</strong></span>
+                    <P class="description">Contribuer au mieux-être des femmes en difficulté<br><br><br>
+                    Faciliter l’accès à l’information<br><br><br>
+                    La qualité du service<br><br><br>
+                    La satisfaction de nos utilisateurs</P>  
+                </div>
             </div>
         
-        </div>
-        
-        <!-- BLOC TEXTE n°2-->
-        <div class="bloctexte">
-            <div class="texte">
-                <span><strong>Pour qui ?</strong></span>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sapiente similique ex debitis molestias ullam? Voluptate, ducimus. Impedit mollitia animi, unde nihil nisi minima cumque, dolore dolorum sint, ad id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sapiente similique ex debitis molestias ullam? Voluptate,ducimus. Impedit mollitia animi, unde nihil nisi minima cumque, dolore dolorum sint, ad id.</P>
-        
+         
+                <h3>Notre Equipe</h3>
+       
+            <!-- BLOC TEXTE n°3-->
+        <div class="container">
+            <div class="bloctexte col-md-6">
+                <div class="texte">
+                    <div class="photoronde">
+                        <img src="{{ asset('images/phototiffany.png')}}" alt="photo de Tiffany"/>
+                    </div>
+                    <span><strong>Tiffany 31 ans</strong></span>
+                    <P class="description">A l'écoute et organisée, je souhaite devenir développeuse web Back-End dans une start-up. Pour y parvenir, j’ai suivi une formation de développeuse web avec WebFroce3 et Social Builder.</P>
+                </div>
+            </div>
+                
+            <!-- BLOC TEXTE n°4-->
+            <div class="bloctexte col-md-6">
+                <div class="texte">
+                    <div class="photoronde">
+                        <img src="{{ asset('images/photoloubna.png')}}" alt="photo de loubna" />
+                    </div>
+                    <span><strong>Loubna 29 ans</strong></span>
+                    <P class="description">Rigoureuse et méthodique, je souhaite devenir développeuse web Full Stack. Pour y parvenir, j’ai suivi une formation de développeuse web avec WebFroce3 et Social Builder.</P>
+                </div>
             </div>
         </div>
+
         
-        <!-- BLOC TEXTE n°3-->
-        <div class="bloctexte">
-            <div class="texte">
-                <span><strong>Pourquoi ?</strong></span>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sapiente similique ex debitis molestias ullam? Voluptate, ducimus. Impedit mollitia animi, unde nihil nisi minima cumque, dolore dolorum sint, ad id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sapiente similique ex debitis molestias ullam? Voluptate,ducimus. Impedit mollitia animi, unde nihil nisi minima cumque, dolore dolorum sint, ad id.</P>
-        
+        <div class="container"
+            <!-- BLOC TEXTE n°5-->
+            <div class="bloctexte col-md-6">
+                <div class="texte">
+                    <div class="photoronde">
+                        <img src="{{ asset('images/photomathilde.png')}}" alt="photo de mathilde" />
+                    </div>
+                    <span><strong>Mathilde 32 ans</strong></span>
+                    <P class="description">Réactive et autonome, je souhaite devenir développeuse web Full Stack. Pour y parvenir, j’ai suivi une formation de développeuse web avec WebFroce3 et Social Builder.</P>
+                </div>
             </div>
+            <!-- BLOC TEXTE n°6-->
+            <div class="bloctexte col-md-6">
+                <div class="texte">
+                    <div class="photoronde">
+                        <img src="{{ asset('images/photonadia.png')}}" alt="photo de nadia"/>
+                    </div>
+                    <span><strong>Nadia 51 ans</strong></span>
+                    <P class="description">Créative et perfectionniste, je souhaite devenir développeuse web Front-End indépendante. Pour y parvenir, j’ai suivi une formation de développeuse web avec WebFroce3 et Social Builder.</P>
+                </div>
         </div>
         
-        <!-- BLOC TEXTE n°4-->
-        <div class="bloctexte">
-            <div class="texte">
-                <span><strong>Comment ça fonctionne ?</strong></span>
-                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sapiente similique ex debitis molestias ullam? Voluptate, ducimus. Impedit mollitia animi, unde nihil nisi minima cumque, dolore dolorum sint, ad id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sapiente similique ex debitis molestias ullam? Voluptate,ducimus. Impedit mollitia animi, unde nihil nisi minima cumque, dolore dolorum sint, ad id.</P>
-        
-            </div>
-        </div>
-    </div>
+    </section>
+
+  </div>
+    
 
 
 {% endblock %}

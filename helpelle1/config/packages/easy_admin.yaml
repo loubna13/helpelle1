@@ -16,6 +16,10 @@ easy_admin:
         children:
             - {entity: Message, label: "Liste de messages", icon: "th-list"}
             - {entity: Message, label: "Ajouter un message", icon: "plus", params: {action: 'new'}}
+      - label: "Formulaire"
+        children:
+            - {entity: Formulaire, label: "Liste de bénévoles", icon: "th-list"}
+           
 
 
 
@@ -116,6 +120,27 @@ easy_admin:
         title: Ajouter un message
       new:
         item_permission: 'ROLE_ADMIN'
+
+
+    Formulaire:
+      class: App\Entity\Formulaire
+      label: "Formulaire"
+      form:
+        fields:
+          - {type: 'group', icon: 'pencil', label: 'Basic Information', css_class: 'col-lg-7'}
+          - nom
+          - prenom
+          - {property: 'motivations', type: 'text_editor'}
+          - mail
+      list:
+        batch_actions: ['delete']
+        title: "bénévoles inscrits" 
+      show:
+        item_permission: 'ROLE_ADMIN'
+      delete:
+        item_permission: 'ROLE_ADMIN'
+        
+      
       
 
 #        # List the entity class name you want to manage

@@ -1,0 +1,40 @@
+
+{% block body %}
+{{ form_start(form) }}
+    <div class="container">
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label >Nom</label>
+	              {{ form_widget(form.nom ,{ 'attr' :{'placeholder':'Nom','class':'nomDeMaClasse', 'class':'form-control'}})}}
+	            </div>
+	        </div>
+
+	        <div class="form-row">
+	           <div class="form-group col-md-6">
+	            <label for="">Prénom</label>
+	             
+	             {{ form_widget(form.prenom ,{ 'attr' :{'placeholder':'Prénom','class':'nomDeMaClasse', 'class':'form-control'}}) }}
+	            </div>       
+	        </div>
+
+	        <div class="form-row">
+	            <div class="form-group col-md-6">
+	                <label >Motivations</label>
+	                {{ form_widget(form.motivations ,{ 'attr' :{'placeholder':'Motivations','class':'nomDeMaClasse', 'class':'form-control'}}) }}
+	            </div>
+	        </div>
+	        <div class="form-row">
+	             <div class="form-group col-md-6">
+	                 <label >Mail</label>
+
+	             {{ form_widget(form.mail ,{ 'attr' :{'placeholder':'Mail','class':'nomDeMaClasse', 'class':'form-control'}}) }}
+	             </div>
+	        </div>
+	    {{ form_widget(form) }}
+	    <button class="btn">{{ button_label|default('Envoyer') }}</button>
+
+   </div>
+    <br>
+    <br>
+{{ form_end(form) }}
+{% endblock %}

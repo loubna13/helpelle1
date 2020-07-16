@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire{% endblock %}
+
+{% block body %}
+    <h1>Formulaire Bénévolat</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formulaire.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ formulaire.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ formulaire.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Motivations</th>
+                <td>{{ formulaire.motivations }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ formulaire.mail }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('formulaire_index') }}">Revenir à la liste</a>
+{% endblock %}
