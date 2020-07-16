@@ -6,6 +6,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Association;
 use App\Entity\User;
+use App\Entity\Formulaire;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
@@ -62,7 +63,7 @@ class AppFixtures extends Fixture
         $user4->setRoles(['ROLE_user']);
         $user4->setEmail('test@test2.fr');
 
-         $password = $this->encoder->encodePassword($user4, 'pass_1234');
+        $password = $this->encoder->encodePassword($user4, 'pass_1234');
         $user4->setPassword($password);
 
 
@@ -75,9 +76,13 @@ class AppFixtures extends Fixture
         $association->setRegion('ile de france');
         $association->setMail('admin@test.fr');
         $association->setDescriptif('Anakin... je suis ton pere ...');
-       
-       
 
+        $formulaire = new Formulaire();
+        $formulaire->setNom('admin');
+        $formulaire->setPrenom('admin');
+        $formulaire->setMotivations('je suis motivé');
+        $formulaire->setMail('test@test.fr');
+           
         $manager->persist($user);
         $manager->persist($user2);
         $manager->persist($user3);

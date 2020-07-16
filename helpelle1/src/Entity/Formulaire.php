@@ -32,6 +32,11 @@ class Formulaire
      */
     private $motivations;
 
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $mail;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Formulaire
     public function setMotivations(string $motivations): self
     {
         $this->motivations = $motivations;
+
+        return $this;
+    }
+
+    public function getMail(): ?string
+    {
+        return $this->mail;
+    }
+
+    public function setMail(string $mail): self
+    {
+        $this->mail = $mail;
 
         return $this;
     }
