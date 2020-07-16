@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Association;
+use App\Entity\Formulaire;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -68,15 +69,20 @@ class AppFixtures extends Fixture
 
 
         $association = new Association();
-        $association->setNom('admin');
-        $association->setType('violence conjugale');
-        $association->setAdresse('14 allée chimen chyen');
-        $association->setTelephone('01 34 13 23 34');
-        $association->setRegion('ile de france');
-        $association->setMail('admin@test.fr');
-        $association->setDescriptif('Anakin... je suis ton pere ...');
+        $association->setNom('');
+        $association->setType('');
+        $association->setAdresse('');
+        $association->setTelephone('');
+        $association->setRegion('');
+        $association->setMail('');
+        $association->setDescriptif('');
        
        
+        $formulaire = new Formulaire();
+        $formulaire->setNom('');
+        $formulaire->setPrenom('');
+        $formulaire->setMotivations('');
+        $formulaire->setmail('');
 
         $manager->persist($user);
         $manager->persist($user2);
@@ -84,6 +90,9 @@ class AppFixtures extends Fixture
         $manager->persist($user4);
         $manager->persist($association);
         $manager->flush();
+
+       
+       
 
     }
 }
