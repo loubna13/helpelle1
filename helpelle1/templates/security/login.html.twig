@@ -11,7 +11,7 @@
 
             {% if app.user %}
                 <div class="mb-3">
-                    Bonjour {{ app.user.username }}, <a href="{{ path('app_logout') }}">Deconnexion</a>
+                    Bonjour {{ app.user.Nom }},  <a href="{{ path('app_logout') }}">Deconnexion</a>
                 </div>
             {% endif %}
             <br>
@@ -40,5 +40,7 @@
                 Connexion
             </button>
         </form>
-    </div>      
+    </div>
+    <br>
+          
 {% endblock %}

@@ -29,9 +29,11 @@
 	             {{ form_widget(form.mail ,{ 'attr' :{'placeholder':'Mail','class':'nomDeMaClasse', 'class':'form-control'}}) }}
 	             </div>
 	        </div>
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Envoyer') }}</button>
-{{ form_end(form) }} <br>
+	    {{ form_widget(form) }}
+	    <button class="btn">{{ button_label|default('Envoyer') }}</button>
+
+   </div>
+    <br>
+    <br>
+{{ form_end(form) }}
 {% endblock %}
-
-

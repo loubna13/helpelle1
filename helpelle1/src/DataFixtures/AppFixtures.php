@@ -23,7 +23,7 @@ class AppFixtures extends Fixture
         $user = new User();
         $user->setPseudo('admin');
 
-        $user->setNom('barkat');
+        $user->setNom('Barkat');
         $user->setPrenom('loubna');
         $user->setRoles(['ROLE_ADMIN']);
         $user->setEmail('loubnabarkat@outlook.fr');
@@ -34,7 +34,7 @@ class AppFixtures extends Fixture
         $user2 = new User();
         $user2->setPseudo('user2');
 
-        $user2->setNom('cottin');
+        $user2->setNom('Cottin');
         $user2->setPrenom('mathilde');
         $user2->setRoles(['ROLE_user']);
         $user2->setEmail('test@test.fr');
@@ -46,7 +46,7 @@ class AppFixtures extends Fixture
         $user3 = new User();
         $user3->setPseudo('user3');
 
-        $user3->setNom('elusue');
+        $user3->setNom('Elusue');
         $user3->setPrenom('Tiffany');
         $user3->setRoles(['ROLE_user']);
         $user3->setEmail('test@test1.fr');
@@ -58,7 +58,7 @@ class AppFixtures extends Fixture
         $user4 = new User();
         $user4->setPseudo('user4test');
 
-        $user4->setNom('emsaba');
+        $user4->setNom('Essama');
         $user4->setPrenom('Nadia');
         $user4->setRoles(['ROLE_user']);
         $user4->setEmail('test@test2.fr');
@@ -89,6 +89,7 @@ class AppFixtures extends Fixture
         $manager->persist($user3);
         $manager->persist($user4);
         $manager->persist($association);
+        $manager->persist($formulaire);
         $manager->flush();
 
        

@@ -25,17 +25,12 @@
                 <td>{{ formulaire.motivations }}</td>
                 <td>{{ formulaire.mail }}</td>
                 <td>
-                    <a href="{{ path('formulaire_show', {'id': formulaire.id}) }}">show</a>
-                    <a href="{{ path('formulaire_edit', {'id': formulaire.id}) }}">edit</a>
+                    <a href="{{ path('formulaire_show', {'id': formulaire.id}) }}">Afficher</a>
                 </td>
             </tr>
         {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
+            
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('formulaire_new') }}">Create new</a>
 {% endblock %}

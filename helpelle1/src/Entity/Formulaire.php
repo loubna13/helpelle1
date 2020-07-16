@@ -44,6 +44,11 @@ class Formulaire
 
    
 
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $mail;
+
     public function getId(): ?int
     {
         return $this->id;

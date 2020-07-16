@@ -260,11 +260,13 @@ footer{
     margin-left: 20px;
     margin-right: 20px;
     color: #ff7a7a;
+    font-weight: bold;
     
 }
 .inscription{
     float: right;
     color: #ff7a7a;
+    font-weight: bold;
 }
 #mapid { 
 
@@ -279,4 +281,15 @@ footer{
 .benevole{
     float: left;
     padding-top: 0px;
+}
+.lienf a{
+    color: #F8F9F9;
+    opacity: 0.2;
+}
+.accessd{
+    width: 75%;
+}
+.container div{
+    width: 100%;
+    
 }

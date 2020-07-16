@@ -17,6 +17,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            access_denied_url: access_denied
             anonymous: true
             lazy: true
             provider: user_provider
@@ -25,7 +26,7 @@ security:
                     - App\Security\LoginFormAuthenticator   
             logout:
                 path:   app_logout
-                target: /accueil
+                target: /
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
